@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: user-management
+
+  datasource:
+    url: jdbc:postgresql://metro.proxy.rlwy.net:27969/railway
+    username: postgres
+    password: YPXDyRYtpzBWKkrGdQHWPSucsbQWAshi
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
