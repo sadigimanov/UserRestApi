@@ -19,7 +19,6 @@ https://userrestapi-production.up.railway.app/swagger-ui/index.html
 - DTO ↔ Entity mapping with MapStruct  
 - Auto-generated API documentation via Springdoc OpenAPI  
 - PostgreSQL database support  
-- Docker image generation using Google Jib  
 
 ---
 
@@ -35,7 +34,6 @@ https://userrestapi-production.up.railway.app/swagger-ui/index.html
 - PostgreSQL  
 - springdoc-openapi 2.8.14  
 - Maven  
-- Google Jib
 
 ---
 
@@ -70,14 +68,13 @@ src/main/java/dev/sadiq/user_management
 │       └── UserServiceImpl.java
 │
 └── OpenApiConfig.java
+
 Getting Started (Local Development)
 1. Create PostgreSQL Database
-sql
-Copy code
+
 CREATE DATABASE user_management;
 2. Configure application.yml
-yaml
-Copy code
+
 spring:
   application:
     name: user-management
@@ -96,18 +93,13 @@ spring:
 server:
   port: 8080
 3. Run the Application
-bash
-Copy code
+
 mvn spring-boot:run
 Application will start at:
 
-arduino
-Copy code
 http://localhost:8080
 Swagger documentation:
 
-bash
-Copy code
 http://localhost:8080/swagger-ui/index.html
 API Endpoints
 Base Path: /user
