@@ -1,50 +1,47 @@
-User Management Service
+# User Management Service
 
-A simple, clean User Management REST API built with Spring Boot 3.5, Java 21, PostgreSQL, MapStruct, and OpenAPI documentation.
-The service supports full CRUD operations and is deployed on Railway.
+A lightweight and clean **User Management REST API** built with **Spring Boot 3.5**, **Java 21**, **PostgreSQL**, **MapStruct**, and **OpenAPI**.  
+The service supports full CRUD operations on users and is deployed on **Railway**.
 
-Swagger UI:
+---
+
+## Swagger Documentation
+
+**Swagger UI:**  
 https://userrestapi-production.up.railway.app/swagger-ui/index.html
 
-Features
+---
 
-Create, retrieve, update, delete users
+## Features
 
-Validation with Jakarta Bean Validation
+- Full CRUD operations for managing users  
+- DTO validation using Jakarta Bean Validation  
+- DTO ↔ Entity mapping with MapStruct  
+- Auto-generated API documentation via Springdoc OpenAPI  
+- PostgreSQL database support  
+- Docker image generation using Google Jib  
 
-DTO mapping with MapStruct
+---
 
-API documentation with OpenAPI (springdoc)
+## Technologies Used
 
-PostgreSQL integration
+- Java 21  
+- Spring Boot 3.5.x  
+  - Spring Web  
+  - Spring Validation  
+  - Spring Data JPA  
+- MapStruct 1.6.3  
+- Lombok  
+- PostgreSQL  
+- springdoc-openapi 2.8.14  
+- Maven  
+- Google Jib
 
-Docker image build support using Google Jib
+---
 
-Technologies Used
+## Project Structure
 
-Java 21
-
-Spring Boot 3.5.x
-
-Spring Web
-
-Spring Validation
-
-Spring Data JPA
-
-PostgreSQL
-
-MapStruct 1.6.3
-
-Lombok
-
-springdoc-openapi 2.8.14
-
-Maven
-
-Jib (for building Docker images)
-
-Project Structure
+```text
 src/main/java/dev/sadiq/user_management
 │
 ├── controller
@@ -73,15 +70,14 @@ src/main/java/dev/sadiq/user_management
 │       └── UserServiceImpl.java
 │
 └── OpenApiConfig.java
-
-Build & Run Locally
-1. Configure PostgreSQL
-
-Create a database:
-
+Getting Started (Local Development)
+1. Create PostgreSQL Database
+sql
+Copy code
 CREATE DATABASE user_management;
-
-2. Update application.yml (development)
+2. Configure application.yml
+yaml
+Copy code
 spring:
   application:
     name: user-management
@@ -99,42 +95,36 @@ spring:
 
 server:
   port: 8080
-
-3. Run the project
+3. Run the Application
+bash
+Copy code
 mvn spring-boot:run
+Application will start at:
 
-
-App will run at:
-
+arduino
+Copy code
 http://localhost:8080
+Swagger documentation:
 
-
-Swagger:
-
+bash
+Copy code
 http://localhost:8080/swagger-ui/index.html
-
 API Endpoints
-
-Base URL: /user
+Base Path: /user
 
 Get All Users
-
 GET /user
 
 Get User by ID
-
 GET /user/{id}
 
 Create User
-
 POST /user
 Body: CreateUserDto
 
 Update User
-
 PUT /user/{id}
 Body: UpdateUserDto
 
 Delete User
-
 DELETE /user/{id}
